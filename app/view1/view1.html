@@ -1,0 +1,65 @@
+<div ng-controller="View1Ctrl">
+    <div id="errorDialog" style="background-color: aliceblue; display: none" >
+        <span id="errorText" style="color: chocolateo"></span>
+    </div>
+    <p>This is the partial for view 1.</p>
+    <div align="center">
+        <table id="users" style="border: 1px solid black;">
+            <tr>
+                <th>Num</th>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Email</th>
+                <th>Addrres</th>
+                <th>Status</th>
+                <th>&nbsp;</th>
+            </tr>
+
+            <tr ng-click="buttonClick(oneRec.id)" id="ctr" ng-repeat="oneRec in arrRec track by $index">
+                <td style="border: 1px solid black;">{{$index + 1}}</td>
+                <td style="border: 1px solid black;">{{oneRec.name}}</td>
+                <td style="border: 1px solid black;">{{oneRec.code}}</td>
+                <td style="border: 1px solid black;">{{oneRec.email}}</td>
+                <td style="border: 1px solid black;">{{oneRec.address}}</td>
+                <td style="border: 1px solid black;">{{oneRec.status}}</td>
+                <td style="border: 1px solid black;"><img ng-click="deleteUser(oneRec.id)"
+                        src="https://icons-for-free.com/iconfiles/png/512/cercle+close+delete+dismiss+remove+icon-1320196712448219692.png"
+                        height="24" width="24"/></td>
+            </tr>
+        </table>
+        </br>
+            <h2>Create new user</h2>
+            <table width="80%">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black;"></td>
+                    <td style="border: 1px solid black;">
+                        <input ng-model="name"  type="text" /></td>
+                    <td style="border: 1px solid black;">
+                        <input ng-model="code"  type="text" /></td>
+                    <td style="border: 1px solid black;">
+                        <input ng-model="email"  type="text" /></td>
+                    <td style="border: 1px solid black;">
+                        <input ng-model="address" type="text" /></td>
+                    <td style="border: 1px solid black;"></td>
+                </tr>
+                <tr>
+                    <td colspan="5"/>
+                    <td>&nbsp;<input type="submit" title="[Submit]" ng-click="submitUser()"
+                    style="horiz-align: right"
+                    /> </td>
+                </tr>
+            </table>
+        </table>
+    </div>
+</div>
+
+</div>
